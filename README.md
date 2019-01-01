@@ -11,11 +11,11 @@ javac receiver.java
 javac packet.java
 
 ### Running the Code:
-java network 8397									ON SAND MACHINE
+java network <port_num>								
 
-java receiver sand.cise.ufl.edu 8397				ON STORM MACHINE
+java receiver <ip-address of the machine> <port_num>				
 
-java sender sand.cise.ufl.edu 8397 message.txt		ON THUNDERMACHINE
+java sender <ip-address of the machine> <port_num> message.txt		
 
 ### Code Structure:
 The network program begins by creating a ServerSocket object. The ServerSocket object listens on a port, which is specified by the command line input parameter when running the network code. Once the server binds to its port, then the ServerSocket object is created and accepts a connection from the client. When the connection is requested and established, the accept method returns a new Socket object. I created a class called MessageThread, which extends on Thread. This allows the network to communicate with the clients and to continue listening for client connection requests.
